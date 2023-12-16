@@ -18,4 +18,4 @@ combination of copying and pasting from Excel files, and manual data entry.
 Special thanks to the Bermuda Government, and Louis Galipeau and Andres Simons
 of the Bermuda.IO project, who made the first set of online PDF Budget Books and 
 other financial reports available. Their site is now offline but you can find 
-some of it on the Wayback Machine](https://web.archive.org/web/20200801084728/http://bermuda.io/)
+some of it on the [Wayback Machine](https://web.archive.org/web/20200801084728/http://bermuda.io/)
