@@ -1,7 +1,7 @@
 
 U=root
 DB=BudgetData
-DATADIR=DataLoad
+DATADIR=data-sql
 
 mysql -u $U -e "create database $DB"
 

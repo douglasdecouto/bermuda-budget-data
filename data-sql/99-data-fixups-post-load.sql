@@ -1,6 +1,4 @@
 
-use test;
-
 /*
 Run this after running the scripts to populate the data tables via insert scripts.
 They fix a few things that are funny in the data that did not get addressed in the

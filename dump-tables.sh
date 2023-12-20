@@ -1,6 +1,15 @@
 
-mysql -u root --batch test -e "select * from BudgetExpenditureAnalysis;" > data/ExpenditureAnalysis.csv
-mysql -u root --batch test -e "select concat('y', BudgetBookVersion) as BBV, Ministry, HeadNumber, HeadName, BudgetYear, DataVersion, DataValue from BudgetExpenditureSummary;" > data/ExpenditureSummary.csv
-mysql -u root --batch test -e "select * from BudgetRevenueAnalysis;" > data/RevenueAnalysis.csv
-mysql -u root --batch test -e "select * from BudgetRevenuesummary;" > data/RevenueSummary.csv
-mysql -u root --batch test -e "select * from BudgetExpenditureDetails;" > data/ExpenditureDetails.csv
+U=root
+DB=BudgetData
+OUTDIR=data-csv
+
+# Note: if you load this data into Excel, you need to pre-format 
+# the first column to be "Text", otherwise it will try to parse
+# (incorrectly) the BudgetBookVersion as a "slash date" (e.g. 2003/04 
+# will be incorrectly converted to April 2003).
+
+mysql -u $U  --batch $DB -e "select * from BudgetExpenditureAnalysis;"  > $OUTDIR/ExpenditureAnalysis.csv
+mysql -u $U  --batch $DB -e "select * from BudgetExpenditureSummary;"   > $OUTDIR/ExpenditureSummary.csv
+mysql -u $U  --batch $DB -e "select * from BudgetRevenueAnalysis;"      > $OUTDIR/RevenueAnalysis.csv
+mysql -u $U  --batch $DB -e "select * from BudgetRevenuesummary;"       > $OUTDIR/RevenueSummary.csv
+mysql -u $U  --batch $DB -e "select * from BudgetExpenditureDetails;"   > $OUTDIR/ExpenditureDetails.csv
