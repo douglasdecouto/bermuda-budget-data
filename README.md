@@ -27,11 +27,63 @@ the tables into files.
 
 ## Data Structure
 
+Budget data is organized as "summary" tables (by Ministry and department), or by "analysis" tables (by type of expense or revenue).
 
+In addition, each table will show the following four numbers (referred to as `DataVersion` in the data files):
+
+1. "Actual": the actual value from the fiscal year before last (the numbers for a fiscal year aren't finalized in time for the budget dats in the immediate following year).
+1. "Original": the original budget estimate in the immediate prior fiscal year for this value. It *should* match the same number looked up under "Estimate" in last year's budget.
+1. "Revised": the latest available data for this value from the immediate prior fiscal year.
+1. "Estimate": the budget number for *this* fiscal year.
+
+In the data files, each number appears on its own line ("unpivoted"), starting with the `BudgetBookVersion` 
+(what year's budget was this data published in), along with the `DataVersion` code and the `BudgetYear` to which that number applies. So for example, the "Actual" numbers will always have a `BudgetYear` which is two years behind the
+`BudgetBookVersion`.
+
+### Summary Data
+
+Summary data is provided for expenditure (expenses), revenue, head count (FTE), and capital expenses, by:
+
+- Budget year; since the fiscal year starts in April expressed as the two years.
+it overlaps, e.g. 2003/04.
+- Government Ministry.
+- Budget book "Head", essentially a department in the Ministry.  There is also a "head number" associated with each head. Head numbers are unique (I think!) across the whole budget book.
+- Data version: Actual/Original/Revised/Estimate, as outlined above.
+
+Sometimes Ministries are reshuffled, so the set of Ministries can be different in different budget years, and which Head belongs to which Ministry can also change.
+
+### Analysis Data
+
+Analysis data is provided for expenditure and revenue.
+
+Expenditure analysis numbers are by:
+
+- Budget year.
+- "Object Code", which is the type of expense, e.g. Salaries, Wages, Rentals, etc.
+- By Actual/Original/Revised/Estimate data version.
+
+Revenue analysis numbers are by:
+
+- Budget Year.
+- "Head", which is really the name for relateds groups of revenu, e.g. "Taxes", or "Fees". This is not the same as the "Head" in the summary tables. Although the name is a bit confusing it was kepty to match what that tables show in the printed (or PDF) budget books.
+- Revenue Description, which is the type of revenue at the next level of detail, such as "Customs Duty" or "Liquor Licenses".
+
+The analysis table object codes and revenue descriptions should be similar across budget years.
+
+### Other Notes
+
+Since the Budget Books are prepared manually each year, and
+ the process of collating this data has been quite manual 
+ and a patchwork of approaches, you should not be surprised
+ to see inconsistencies across years.
+
+Also, if you compute things like grand totals and subtotals, 
+they may not match what you see in the printed budget books 
+due to things like rounding or even a little bit of human error.
 
 ## Acknowledgements
 
-Special thanks to the Bermuda Government, and Louis Galipeau and Andres Simons
+Special thanks to the Bermuda Government, and Louis Galipeau and Andrew Simons
 of the Bermuda.IO project, who made the first set of online PDF Budget Books and 
 other financial reports available. Their site is now offline but you can find 
 some of it on the [Wayback Machine](https://web.archive.org/web/20200801084728/http://bermuda.io/)
