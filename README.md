@@ -1,7 +1,7 @@
 # Bermuda Budget Data
 
 This repository contains machine-readable data from the offical budget
-of the [Goverment of Bermuda](http://gov.bm), suitable for analysis with
+of the [Goverment of Bermuda](https://www.gov.bm), suitable for analysis with
 tools like Excel, scripts, and databases.
 
 This data is officially disseminated, first in a 300+ page hard-copy to 
@@ -65,7 +65,7 @@ Expenditure analysis numbers are by:
 Revenue analysis numbers are by:
 
 - Budget Year.
-- "Head", which is really the name for relateds groups of revenu, e.g. "Taxes", or "Fees". This is not the same as the "Head" in the summary tables. Although the name is a bit confusing it was kepty to match what that tables show in the printed (or PDF) budget books.
+- "Head", which is really the name for related groups of revenue types, e.g. "Taxes", or "Fees". This is not the same as the "Head" in the summary tables. Although the name is a bit confusing it was kepty to match what that tables show in the printed (or PDF) budget books.
 - Revenue Description, which is the type of revenue at the next level of detail, such as "Customs Duty" or "Liquor Licenses".
 
 The analysis table object codes and revenue descriptions should be similar across budget years.

@@ -13,3 +13,4 @@ mysql -u $U  --batch $DB -e "select * from BudgetExpenditureSummary;"   > $OUTDI
 mysql -u $U  --batch $DB -e "select * from BudgetRevenueAnalysis;"      > $OUTDIR/RevenueAnalysis.csv
 mysql -u $U  --batch $DB -e "select * from BudgetRevenuesummary;"       > $OUTDIR/RevenueSummary.csv
 mysql -u $U  --batch $DB -e "select * from BudgetExpenditureDetails;"   > $OUTDIR/ExpenditureDetails.csv
+mysql -u $U  --batch $DB -e "select * from BudgetEmploymentSummary;"    > $OUTDIR/EmploymentSummary.csv
