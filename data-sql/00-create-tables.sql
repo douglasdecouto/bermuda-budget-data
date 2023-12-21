@@ -68,6 +68,17 @@ create table BudgetEmploymentSummary (
         )
 ;
 
+create table CapitalExpenditureSummary (
+		BudgetBookVersion nvarchar(7)
+		, Ministry nvarchar(255)
+		, HeadNumber nvarchar(3)
+		, HeadName nvarchar(255)
+		, BudgetYear nvarchar(7)
+		, DataVersion nvarchar(8)
+		, DataValue numeric(15, 0)
+        )
+;
+
 create table MinistrySort (
 		Ministry nvarchar(255)
 		, SortOrder int
