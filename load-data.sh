@@ -8,6 +8,7 @@ mysql -u $U -e "create database $DB"
 mysql -u $U $DB < $DATADIR/00-create-tables.sql
 
 mysql -u $U $DB < $DATADIR/budget-data-expenditure-analysis.sql
+
 mysql -u $U $DB < $DATADIR/budget-data-expenditure-summary.sql
 mysql -u $U $DB < $DATADIR/budget-data-expenditure-details.sql
 

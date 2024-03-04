@@ -8,6 +8,13 @@ create table BudgetExpenditureAnalysis (
         )
 ;
 
+/* Map expense analysis object codes into a smaller number of groups */
+create table ExpenseAnalysisGroup (
+		ExpenseGroup nvarchar(255)
+		, ObjectCode nvarchar(255)
+
+);
+
 create table BudgetExpenditureSummary (
 		BudgetBookVersion nvarchar(7)
 		, Ministry nvarchar(255)
@@ -84,3 +91,4 @@ create table MinistrySort (
 		, SortOrder int
         )
 ;
+

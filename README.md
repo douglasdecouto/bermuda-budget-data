@@ -81,6 +81,10 @@ Also, if you compute things like grand totals and subtotals,
 they may not match what you see in the printed budget books 
 due to things like rounding or even a little bit of human error.
 
+Heads and business units can sometimes move between ministries, 
+due to reorganizations. Sometimes numbers are not directly comparable
+across diffrent years after these changes.
+
 ## Acknowledgements
 
 Special thanks to the Bermuda Government, and Louis Galipeau and Andrew Simons
