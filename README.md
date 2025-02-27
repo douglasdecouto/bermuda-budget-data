@@ -37,15 +37,19 @@ In addition, each table will show the following four numbers (referred to as `Da
 1. "Estimate": the budget number for *this* fiscal year.
 
 In the data files, each number appears on its own line ("unpivoted"), starting with the `BudgetBookVersion` 
-(what year's budget was this data published in), along with the `DataVersion` code and the `BudgetYear` to which that number applies. So for example, the "Actual" numbers will always have a `BudgetYear` which is two years behind the
+(what year's budget this data was published in), along with the `DataVersion` code and the `BudgetYear` to which that number applies. So for example, the "Actual" numbers will always have a `BudgetYear` which is two years behind the
 `BudgetBookVersion`.
+
+Since the fiscal year starts in April, the budget year is often expressed as the two years it overlaps, e.g. 2003/04. 
+The original source data for this project stores the years like that with a slash.  However many tools like
+Excel are confused by the slashes and try to interpret it as a year and monnth (e.g. 2011/12 gets converted to Dec 2011).
+To avoid this all the years are stored as the four-digit year the budget starts in (e.g. 2011, not 2011/12).
 
 ### Summary Data
 
 Summary data is provided for expenditure (expenses), revenue, head count (FTE), and capital expenses, by:
 
-- Budget year; since the fiscal year starts in April expressed as the two years.
-it overlaps, e.g. 2003/04.
+- Budget year; 
 - Government Ministry.
 - Budget book "Head", essentially a department in the Ministry.  There is also a "head number" associated with each head. Head numbers are unique (I think!) across the whole budget book.
 - Data version: Actual/Original/Revised/Estimate, as outlined above.
@@ -65,7 +69,7 @@ Expenditure analysis numbers are by:
 Revenue analysis numbers are by:
 
 - Budget Year.
-- "Head", which is really the name for related groups of revenue types, e.g. "Taxes", or "Fees". This is not the same as the "Head" in the summary tables. Although the name is a bit confusing it was kepty to match what that tables show in the printed (or PDF) budget books.
+- "Head", which is really the name for related groups of revenue types, e.g. "Taxes", or "Fees". This is not the same as the "Head" in the summary tables. Although the name is a bit confusing it was kept to match what the tables show in the printed (or PDF) budget books.
 - Revenue Description, which is the type of revenue at the next level of detail, such as "Customs Duty" or "Liquor Licenses".
 
 The analysis table object codes and revenue descriptions should be similar across budget years.
